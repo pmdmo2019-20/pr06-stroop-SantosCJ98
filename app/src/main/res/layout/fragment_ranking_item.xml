@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRanking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardElevation="@dimen/main_card_elevation"
+        card_view:cardUseCompatPadding="true">
+
+      <LinearLayout
+                    android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="horizontal">
+
+          <ImageView
+              android:id="@+id/imgPlayerR"
+              android:layout_width="120dp"
+              android:layout_height="120dp"
+              android:padding="20dp"></ImageView>
+
+          <LinearLayout
+              android:paddingHorizontal="17dp"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+              <TextView
+                  android:id="@+id/lblNombreR"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Jugador"
+                  android:textSize="27dp"></TextView>
+
+              <TextView
+                  android:id="@+id/lblMode"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Mode"
+                  android:textSize="15dp"></TextView>
+
+              <TextView
+                  android:id="@+id/lblMinutes"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Minutes"
+                  android:textSize="15dp"></TextView>
+
+              <TextView
+                  android:id="@+id/lblCorrect"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Correct"
+                  android:textSize="15dp"></TextView>
+
+              <TextView
+                  android:id="@+id/lblWords"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Words"
+                  android:textSize="15dp"></TextView>
+          </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Points"
+                android:layout_gravity="center"
+                android:textSize="27dp"></TextView>
+
+            <TextView
+                android:id="@+id/lblScore"
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score"
+                android:textColor="@color/gameRed"
+                android:layout_gravity="center"
+                android:textSize="42dp"></TextView>
+
+        </LinearLayout>
+
+
+
+      </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

@@ -1,0 +1,180 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+
+
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:id="@+id/main_content"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.google.android.material.appbar.AppBarLayout
+
+        android:id="@+id/appbar"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="235dp"
+
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+
+            android:id="@+id/collapsingToolbar"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+
+            app:layout_scrollFlags="noScroll|enterAlways|enterAlwaysCollapsed">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent">
+
+                <Button
+                    android:id="@+id/btnEditPlayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:text="@string/player_selection_btnEdit"
+                    android:textColor="@color/white"
+                    android:drawableLeft="@android:drawable/ic_menu_edit"
+                    android:layout_below="@id/toolbar"
+                    android:visibility="gone"></Button>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:elevation="@dimen/main_toolbar_elevation"
+                    android:theme="@style/AppTheme.AppBarOverlay"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                <TextView
+                    android:id="@+id/lblNombreCharSelected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imgCharSelected"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/player_selection_no_player_selected"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+
+                    ></TextView>
+
+                <ImageView
+                    android:id="@+id/imgCharSelected"
+                    android:layout_width="@dimen/assistant_imgIcon_size"
+                    android:layout_height="@dimen/assistant_imgIcon_size"
+                    android:layout_below="@id/toolbar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/logo"></ImageView>
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/lstPlayers"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintVertical_bias="0.61"
+            android:layout_below="@id/appbar"/>
+
+        <LinearLayout
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/imgEmptyView"
+                android:layout_width="@dimen/player_selection_item_imgAvatar_size"
+                android:layout_height="@dimen/player_selection_item_imgAvatar_size"
+                android:src="@drawable/ic_player_add_black_24dp"
+                android:tint="@color/playerOption"
+                ></ImageView>
+
+            <TextView
+                android:id="@+id/lblEmptyView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/player_selection_no_players_yet"
+                android:textColor="@color/playerOption"></TextView>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabaddPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/playerOption"
+            android:elevation="6dp"
+            android:tint="@color/white"
+            app:borderWidth="0dp"
+            app:pressedTranslationZ="12dp"
+            android:layout_alignEnd="@id/appbar"
+            android:layout_alignBottom="@id/lstPlayers"
+            app:srcCompat="@drawable/ic_player_add_black_24dp"
+            />
+
+
+        ​</RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+    ​
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,9 +15,9 @@
         android:theme="@style/AppTheme.AppBarOverlay"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <androidx.fragment.app.FragmentContainerView
+    <fragment
         android:id="@+id/fcSettingsList"
-        android:name="es.iessaladillo.pedrojoya.stroop.ui.settings.SettingsListFragment"
+        android:name="es.iessaladillo.pedrojoya.stroop.ui.settings.SettingsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

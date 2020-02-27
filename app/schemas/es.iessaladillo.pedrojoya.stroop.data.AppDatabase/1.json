@@ -1,0 +1,143 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "1afe90dc01b5b3bc61f2bc16139dc529",
+    "entities": [
+      {
+        "tableName": "players",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idPlayer` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `avatar` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idPlayer",
+            "columnName": "idPlayer",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "avatar",
+            "columnName": "avatar",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idPlayer"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "PLAYERS_INDEX_NAME_UNIQUE",
+            "unique": true,
+            "columnNames": [
+              "nombre"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `PLAYERS_INDEX_NAME_UNIQUE` ON `${TABLE_NAME}` (`nombre`)"
+          },
+          {
+            "name": "index_players_idPlayer",
+            "unique": false,
+            "columnNames": [
+              "idPlayer"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_players_idPlayer` ON `${TABLE_NAME}` (`idPlayer`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "ranking",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idRanking` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `jugador` INTEGER NOT NULL, `modo_juego` TEXT NOT NULL, `minutos` INTEGER NOT NULL, `palabras` INTEGER NOT NULL, `correctas` INTEGER NOT NULL, `incorrectas` INTEGER NOT NULL, `puntos` INTEGER NOT NULL, `idPlayer` INTEGER NOT NULL, `nombre` TEXT NOT NULL, `avatar` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idRanking",
+            "columnName": "idRanking",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jugador",
+            "columnName": "jugador",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modo_juego",
+            "columnName": "modo_juego",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "minutos",
+            "columnName": "minutos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "palabras",
+            "columnName": "palabras",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correctas",
+            "columnName": "correctas",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "incorrectas",
+            "columnName": "incorrectas",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "puntos",
+            "columnName": "puntos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jugadorob.idPlayer",
+            "columnName": "idPlayer",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jugadorob.nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "jugadorob.avatar",
+            "columnName": "avatar",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idRanking"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1afe90dc01b5b3bc61f2bc16139dc529')"
+    ]
+  }
+}
