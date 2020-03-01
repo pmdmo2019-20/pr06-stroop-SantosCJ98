@@ -2,6 +2,7 @@ package es.iessaladillo.pedrojoya.stroop.ui.game
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
@@ -103,6 +104,28 @@ class GameFragment : Fragment(R.layout.game_fragment) {
                    insertRanking()
 
                     navigateToResults()
+
+                }
+
+                modo.observe(viewLifecycleOwner) {
+
+                    if (it == "Time") {
+
+                        llAttempts.visibility = View.INVISIBLE
+
+                    }
+
+                    else if (it == "Attempts"){
+
+                        llPoints.visibility = View.INVISIBLE
+
+                    }
+
+                }
+
+                attempts.observe(viewLifecycleOwner) {
+
+                    lblAttempts.text = it.toString()
 
                 }
 

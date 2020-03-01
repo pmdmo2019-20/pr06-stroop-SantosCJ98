@@ -92,7 +92,12 @@
 
             </LinearLayout>
 
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
             <LinearLayout
+                android:id="@+id/llPoints"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -117,6 +122,35 @@
 
 
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llAttempts"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lblAttempts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"></TextView>
+
+                <TextView
+                    android:id="@+id/lblAttemptsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attempts"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"></TextView>
+
+
+            </LinearLayout>
+
+            </FrameLayout>
 
 
         </LinearLayout>
@@ -157,7 +191,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/ic_right_black_24dp"
-        android:tint="@color/rightAnswer"
+        app:tint="@color/rightAnswer"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"></ImageView>
@@ -167,7 +201,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/ic_wrong_black_24dp"
-        android:tint="@color/wrongAnswer"
+        app:tint="@color/wrongAnswer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"></ImageView>
 </androidx.constraintlayout.widget.ConstraintLayout>
